@@ -11,9 +11,6 @@ import '../App.css'
 const Import = (props) => {
     // fill out this component
 
-    const handleDelete = (e) => {
-        alert('test');
-    }
 
     return (
         <div>
@@ -37,7 +34,7 @@ const Import = (props) => {
                                 <TableCell align="left">{make.MakeID}</TableCell>
                                 <TableCell align="left">{make.MakeName}</TableCell>
                                 <TableCell align="left">
-                                    <DeleteForeverOutlinedIcon className="delete-button" onClick={handleDelete}/>
+                                    <DeleteForeverOutlinedIcon className="delete-button" onClick={() => props.deleteMake(index)}/>
                                     <Menu />
                                 </TableCell>
                             </TableRow>
