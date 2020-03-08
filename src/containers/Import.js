@@ -1,20 +1,20 @@
 // fill out this container
 import { connect } from 'react-redux';
-import Import from '../components/Import';
-import { fetchMakes, deleteMake } from '../redux/actions'
+import Navigation from '../components/Navigation';
+import { removeRestaurant } from '../redux/actions'
 
 const mapStateToProps = (state) => {
     return {
-        makes: state.makes
+        user: state.user,
+        restaurants: state.restaurants
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchMakes: () => dispatch(fetchMakes()),
-        deleteMake: (index) => dispatch(deleteMake(index))
+        removeRestaurant: (index) => dispatch(removeRestaurant(index))
 
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Import);
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation);

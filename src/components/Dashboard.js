@@ -7,47 +7,35 @@ import {
     TableHead,
     TableRow
 } from '@material-ui/core'
-import DeleteIcon from '@material-ui/icons/Delete'
-import Chart from '../containers/Chart'
 import Total from '../containers/Total'
-import AddCar from '../containers/AddCar'
+import AddRestaurant from '../containers/AddRestaurant'
  
 const Dashboard = (props) => {
+
     return (
-        <Container maxWidth="lg" className="car-container">
-            <h4>Welcome, {props.user.username}</h4>
+        <Container maxWidth="lg" className="restaurant-container">
             <div className="flex-container">
-                <Chart />
                 <Total />
-                <AddCar carTotal={props.cars.length} />
+                <AddRestaurant restaurantTotal={props.restaurants.length} />
             </div>
             <Table>
                 <TableHead>
                     <TableRow>
                         <TableCell>Id</TableCell>
-                        <TableCell>Make/Model</TableCell>
-                        <TableCell>MPG</TableCell>
-                        <TableCell>Cylinders</TableCell>
-                        <TableCell>Horsepower</TableCell>
-                        <TableCell>Delete</TableCell>
+                        <TableCell>name</TableCell>
+                        <TableCell>Description</TableCell>
+                        <TableCell>Address</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                {props.cars.map((car, idx) => (
-                    <TableRow key={car.id}>
+                {props.restaurants.map((restaurant, idx) => (
+                    <TableRow key={restaurant.id}>
                         <TableCell component="th" scope="row">
-                            {car.id}
+                            {restaurant.id}
                         </TableCell>
-                        <TableCell>{car["name"]}</TableCell>
-                        <TableCell>{car["mpg"]}</TableCell>
-                        <TableCell>{car["cylinders"]}</TableCell>
-                        <TableCell>{car["horsepower"]}</TableCell>
-                        <TableCell>
-                            <DeleteIcon
-                                // add onClick method here
-                                onClick={() => props.removeCar(idx)}
-                                className="icon text-red" />
-                        </TableCell>
+                        <TableCell>{restaurant["name"]}</TableCell>
+                        <TableCell>{restaurant["description"]}</TableCell>
+                        <TableCell>{restaurant["address"]}</TableCell>
                     </TableRow>
                 ))}
                 </TableBody>
