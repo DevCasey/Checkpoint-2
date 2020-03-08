@@ -4,7 +4,7 @@ import { Container, Paper, Chip } from '@material-ui/core';
 
 const Restaurant = (props) => {
     const id = props.match.params.id
-    const restaurant = props.restaurants.find(c => c.id == id)
+    const restaurant = props.restaurants.find(c => c.id === id)
 
     return (
         <Container maxWidth="sm" className="restaurant-container">

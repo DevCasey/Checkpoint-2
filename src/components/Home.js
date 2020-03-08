@@ -16,7 +16,7 @@ const Home = (props) => {
                     <TableCell>Name</TableCell>
                     <TableCell>Description</TableCell>
                     <TableCell>Address</TableCell>
-                    {isLogged == 'loggedIn=true' && (<TableCell>Delete</TableCell>)}
+                    {isLogged === 'loggedIn=true' && (<TableCell>Delete</TableCell>)}
                 </TableRow>
             </TableHead>
             <TableBody>
@@ -33,7 +33,7 @@ const Home = (props) => {
 
                     <TableCell>{restaurant["description"]}</TableCell>
                     <TableCell>{restaurant["address"]}</TableCell>
-                    {isLogged == 'loggedIn=true' && (<TableCell>
+                    {isLogged === 'loggedIn=true' && (<TableCell>
                         <DeleteIcon
                             onClick={() => props.removeRestaurant(idx)}
                             className="icon text-red" />

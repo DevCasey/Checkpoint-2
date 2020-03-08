@@ -17,7 +17,7 @@ const ProtectedRoute = ({component: Component, ...rest}) => {
         {...rest}
         render={(props) => checkAuth()
         ? <Component {...props} />
-        : <Redirect to='/login' /> }
+        : <Redirect to='/Login' /> }
         />
     )
 }
@@ -29,9 +29,9 @@ const Router = () => {
     return (
         <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/restaurant/:id" component={Restaurant} />
-            <Route path="login" component={LoginPage} />
-            <ProtectedRoute path="/dashboard" component={Dashboard} />
+            <ProtectedRoute path="/restaurant/:id" component={Restaurant} />
+            <ProtectedRoute path="Login" component={LoginPage} />
+            <Route path="/dashboard" component={Dashboard} />
         </Switch>
     );
 };
