@@ -32,6 +32,9 @@ const Router = () => {
             <ProtectedRoute path="/restaurant/:id" component={Restaurant} />
             <ProtectedRoute path="Login" component={LoginPage} />
             <Route path="/dashboard" component={Dashboard} />
+            {/* <Route path="/Login" component={LoginPage} />
+            <Route path="/dashboard" component={Dashboard} />
+            <ProtectedRoute path="restaurant/:id" component={Restaurant} /> */}
         </Switch>
     );
 };

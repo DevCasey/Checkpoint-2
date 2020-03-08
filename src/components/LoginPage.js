@@ -11,12 +11,12 @@ export default class LoginPage extends React.Component {
         password: ''
     }
     handleChange = this.handleChange.bind(this);
-    // handleSubmit = this.handleSubmit.bind(this);
+    // login = this.login.bind(this);
 
 
-    handleChange(event) {
+    handleChange(e) {
         const state = {...this.state}
-        state[event.target.name] = event.target.value
+        state[e.target.name] = e.target.value
         this.setState(state)
     }
 

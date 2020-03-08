@@ -11,7 +11,7 @@ export default class NavBar extends React.Component {
 
 
     render() {
-        const isLogged = document.cookie;
+        let isLogged = document.cookie;
         return (
             <div className="nav-bar-container">
                 <div className="inner-container">
@@ -26,7 +26,10 @@ export default class NavBar extends React.Component {
                         </div>
 
                         <div className="login-container">
-                            <h4 className="login-button"><Link to='/Login'>Login</Link></h4>
+                            <h4 className="login-button" onClick={() => {
+                                isLogged = "loggedIn="
+                                window.location.replace('/Login')
+                            }}><Link to='/Login'>Login</Link></h4>
                         </div>
                     </div>
 
